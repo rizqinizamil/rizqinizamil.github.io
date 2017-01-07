@@ -14,17 +14,15 @@
 /*=============== VARIABLE ====================*/
 
 /* Color Variable */
-$c-red: #860007;
-$c-yellow: #DCB327;
-$c-black: #171717;
-$c-blue: #2983bb;
+$c-orange: #DB5E24;
+$c-yellow: #DEAC49;
+$c-black: #4C4A50;
+$c-green: #76A834;
 
 /* Font Varible */
-@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro:600');
-$f-serif: Georgia, serif;
-$f-sansserif: 'Source Sans Pro', sans-serif;
-$f-cursive: 'Kaushan Script', cursive;
-
+@import url('https://fonts.googleapis.com/css?family=Muli:400,600|Playfair+Display:400,700i');
+$f-serif: 'Playfair Display', serif;
+$f-sansserif: 'Muli', sans-serif;
 
 /* =========================================== */
 
@@ -37,13 +35,15 @@ body, html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
-	font-family: $f-serif;
+	font-family: $f-sansserif;
   height: 100%;
   color: $c-black; /* body-text */
+
+  overflow-x: hidden;
 }
 .index-background {
   //background-image: url("../../public/images/background-chillis-darker-1.jpg");
-  background: url("../../public/images/bg-home.jpg") center center fixed no-repeat;
+  //background: url("../../public/images/bg-home.jpg") center center fixed no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -53,12 +53,12 @@ body, html {
   background-image: url("../../public/images/metal-red.jpg");
 }
 em {
-  color: $c-yellow;
+  //color: $c-yellow;
   font-weight: bold;
 }
 h1, h2, h3, h4 {
   //color: salmon;
-  color: $c-red;
+  color: $c-orange;
   font-family: $f-sansserif;
   //text-transform: uppercase;
   margin: 0.5rem 0;
@@ -104,11 +104,11 @@ li{
 }
 .bg-inverse {
   //background-color: #222222 !important;
-  background-color: rgba($c-black, 0.85) !important;
+  background-color: rgba($c-black, 1) !important;
 }
 .btn {
-  border: 2px solid $c-red;
-  color: $c-red;
+  border: 2px solid $c-orange;
+  color: $c-orange;
   font-family: $f-sansserif;
   text-transform: uppercase;
   &:hover{
@@ -245,28 +245,31 @@ a:focus.social {
   margin: 0px;
 }
 .page-title h1 {
-	font-family: $f-cursive;
+	font-family: $f-serif;
   margin-bottom: 1rem;
   text-align: center;
 }
 .index-content {
   //margin: 15px 2% 0 2%;
-  background: rgba(white, 0.9);
-  padding: 2em;
+  background: white;
+  //padding: 2em;
 }
 .index-content .row {
   padding-bottom: 15px;
 }
 .index-content h1 {
   padding-top: 15px;
-  padding-left: 15px;
+  //padding-left: 15px;
 }
 .index-content h2,
 .index-content h3 {
-	text-transform: uppercase;
+	//text-transform: uppercase;
+  font-family: $f-serif;
+  font-weight: 700;
+  font-style: italic;
   margin-top: 0;
   padding-top: 15px;
-  padding-left: 15px;
+  //padding-left: 15px;
 }
 .index-content p {
   color: $c-black;
@@ -279,7 +282,7 @@ a:focus.social {
   //background-color: rgba(131,34,23,0.9);
 }
 .index-welcome p {
-  color: #F5F5F5;
+  //color: #F5F5F5;
   font-size: 1.333em;
   text-align: center;
   padding-left: 0;
@@ -330,7 +333,7 @@ a:focus.social {
 }
 .index-step-col-middle,
 .index-step-col-last {
-  margin-top: 15px;
+  //margin-top: 15px;
   padding-left: 30px;
   padding-right: 30px;
 }
@@ -339,7 +342,7 @@ a:focus.social {
 }
 .index-step-order h3 {
   //color: #F5F5F5;
-  color: $c-blue;
+  color: $c-yellow;
 }
 .order-content {
   margin: 15px 3% 0 3%;
@@ -527,6 +530,303 @@ a:focus.social {
   text-align: right;
   color: salmon;
 }
+
+/* =========================
+ *		 NAVIGATION STYLE
+ * ========================= */
+
+.navbar-dark{
+  .navbar-nav{
+    text-align: center;
+  }
+	.nav-item{
+		.nav-link{
+			font-family: $f-sansserif;
+			text-transform: uppercase;
+			&:hover{
+				color: $c-yellow;
+			}
+		}
+		&.active{
+			.nav-link{
+				color: $c-yellow;
+			}
+		}
+	}
+}
+
+/* =========================
+ *		 CONTENT STYLE
+ * ========================= */
+.index-content{}
+
+.index-welcome{
+	h1{
+		position: relative;
+		margin-bottom: 2.5rem;
+		letter-spacing: -.05em;
+    font-weight: 700;
+    font-style: italic;
+		&:after{
+			content: "";
+			display: block;
+			width: 50px;
+			height: 3px;
+			background: $c-yellow;
+			position: absolute;
+			left: 50%;
+			bottom: -15px;
+			margin-left: -25px;
+		}
+		+ p{
+			font-family: $f-serif;
+		}
+	}
+}
+
+.index-intro{
+  padding: 3em 5em;
+  text-align: center;
+  background: url('../images/healthy-crepes.jpg') center fixed no-repeat;
+  @include background-size(cover);
+  margin-left: 0;
+  width: 100%;
+  position: relative;
+  > *{
+    position: relative;
+    z-index: 3;
+  }
+  &:hover{
+    &:before{
+      background: rgba(white, 0.9);
+    }
+  }
+  &:before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(white, 0.75);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 400ms;
+  }
+  h2{
+    margin-bottom: 1em;
+    font-family: $f-serif;
+    font-weight: 700;
+    font-style: italic;
+    padding-top: 0;
+  }
+	h3{
+		margin-top: 1em;
+	}
+  .index-intro-highlight{
+    padding: 0 5em;
+    + ul{
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+      li{
+        display: inline-block;
+        text-transform: uppercase;
+        color: $c-orange;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.index-step{
+	background: none;
+	position: relative;
+	padding: 0;
+	padding: 1em;
+  border-radius: 5px;
+  transition: 400ms;
+  &:hover{
+    box-shadow: 0 10px 20px rgba(black, 0.05);
+  }
+  /*
+	> *:not(h3){
+		padding: 0 25px;
+	}
+	> h3{
+		text-align: center;
+		position: relative;
+		margin-bottom: 1em;
+		&:after{
+			content: "";
+			width: 100%;
+			height: 2px;
+			background: $c-yellow;
+			position: absolute;
+			left: 0;
+			top: 15px;
+		}
+		span{
+			background: white;
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			border-radius: 100%;
+			line-height: 1.2;
+			border: 2px solid $c-yellow;
+			position: relative;
+			z-index: 9;
+		}
+	}
+	&:hover{
+		> h3 span{
+			background: $c-orange;
+			color: white;
+		}
+	}
+	&-col-first{
+		.index-step > h3:before{
+			content: "";
+			display: block;
+			background: $c-orange;
+			border: 2px solid $c-yellow;
+			width: 12px;
+			height: 12px;
+			border-radius: 100%;
+			position: absolute;
+			left: -12px;
+			top: 10px;
+		}
+	}
+	&-col-last{
+		.index-step > h3:before{
+			content: "";
+			display: block;
+			background: $c-orange;
+			border: 2px solid $c-yellow;
+			width: 12px;
+			height: 12px;
+			border-radius: 100%;
+			position: absolute;
+			right: -12px;
+			top: 10px;
+		}
+	}
+  */
+}
+
+.index-hours{
+  background: $c-orange url('../../public/images/choosing-menu.jpg') left no-repeat;
+  @include background-size(cover);
+  .row{
+    padding-bottom: 0;
+  }
+  > *{
+    color: #fff;
+  }
+}
+
+.index-hours-img{
+  background: #fff;
+  padding-left: 0;
+  padding-right: 0;
+  img{
+    width: 100%;
+    opacity: 0.5;
+    display: block;
+  }
+}
+
+.index-hours-txt{
+  padding: 0 15px 0 50%;
+  width: 100%;
+  h3{
+    color: white;
+    font-family: $f-serif;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 1em;
+    padding-top: 0;
+  }
+  ul{
+    padding-left: 20px;
+  }
+}
+
+.index-hours-orange{
+  padding: 1.5em;
+  background: rgba($c-orange, 0.9);
+}
+.index-equal-col-heights{
+  h2{
+    margin-bottom: 1em;
+  }
+}
+
+.center-text{
+	text-align: center;
+}
+
+/* ================================
+				INDEX version 2
+ ================================= */
+
+.v2{
+	&.index-background{
+		//background: none;
+	}
+	.index-intro{
+		margin-left: 0;
+		width: 50%;
+	}
+	.hf-bg{
+		img{
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+}
+
+@media (max-width: 767px){
+  body{
+    font-size: 14px;
+  }
+  .navbar-dark .nav-item .nav-link{
+    font-size: 1rem;
+  }
+  .index-welcome{
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    padding: 0 25px;
+    h1{
+      font-size: 2.75rem;
+    }
+  }
+  .index-intro{
+    padding: 3em 2em;
+    .index-intro-highlight{
+      padding: 0;
+    }
+  }
+  .index-hours-txt{
+    padding: 1.5em 2em;
+    ul{
+      padding-left: 20px;
+    } 
+  }
+}
+
+@media (min-width: 768px) and (max-width: 990px){
+  .index-hours-txt{
+    h3{
+      margin-bottom: .5em;
+    }
+    ul{
+      padding-left: 20px;
+    }
+  }
+}
+
 @media (min-width: 992px) {
   .main { /* Allow main to be next to nav */
     position: absolute;
@@ -587,150 +887,4 @@ a:focus.social {
     padding-left: 0px;
     padding-right: 30px;
   }
-}
-
-/* =========================
- *		 NAVIGATION STYLE
- * ========================= */
-
-.navbar-dark{
-	.nav-item{
-		.nav-link{
-			font-family: $f-sansserif;
-			text-transform: uppercase;
-			&:hover{
-				color: $c-yellow;
-			}
-		}
-		&.active{
-			.nav-link{
-				color: $c-yellow;
-			}
-		}
-	}
-}
-
-/* =========================
- *		 CONTENT STYLE
- * ========================= */
-
-.index-welcome{
-	h1{
-		position: relative;
-		margin-bottom: 2.5rem;
-		letter-spacing: -.05em;
-		&:after{
-			content: "";
-			display: block;
-			width: 50px;
-			height: 3px;
-			background: $c-yellow;
-			position: absolute;
-			left: 50%;
-			bottom: -15px;
-			margin-left: -25px;
-		}
-		+ p{
-			font-style: italic;
-		}
-	}
-}
-
-.index-intro{
-	h3{
-		margin-top: 1em;
-	}
-}
-
-.index-step{
-	background: none;
-	position: relative;
-	padding: 0;
-	padding-top: 2em;
-	> *:not(h3){
-		padding: 0 25px;
-	}
-	> h3{
-		text-align: center;
-		position: relative;
-		margin-bottom: 1em;
-		&:after{
-			content: "";
-			width: 100%;
-			height: 2px;
-			background: $c-yellow;
-			position: absolute;
-			left: 0;
-			top: 15px;
-		}
-		span{
-			background: white;
-			display: inline-block;
-			width: 30px;
-			height: 30px;
-			border-radius: 100%;
-			line-height: 1.2;
-			border: 2px solid $c-yellow;
-			position: relative;
-			z-index: 9;
-		}
-	}
-	&:hover{
-		> h3 span{
-			background: $c-red;
-			color: white;
-		}
-	}
-	&-col-first{
-		.index-step > h3:before{
-			content: "";
-			display: block;
-			background: $c-red;
-			border: 2px solid $c-yellow;
-			width: 12px;
-			height: 12px;
-			border-radius: 100%;
-			position: absolute;
-			left: -12px;
-			top: 10px;
-		}
-	}
-	&-col-last{
-		.index-step > h3:before{
-			content: "";
-			display: block;
-			background: $c-red;
-			border: 2px solid $c-yellow;
-			width: 12px;
-			height: 12px;
-			border-radius: 100%;
-			position: absolute;
-			right: -12px;
-			top: 10px;
-		}
-	}
-}
-
-.center-text{
-	text-align: center;
-}
-
-/* ================================
-				INDEX version 2
- ================================= */
-
-.v2{
-	&.index-background{
-		//background: none;
-	}
-	.index-intro{
-		margin-left: 0;
-		width: 50%;
-	}
-	.hf-bg{
-		img{
-			width: 100%;
-			max-width: 100%;
-		}
-	}
 }

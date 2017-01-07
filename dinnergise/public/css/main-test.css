@@ -15,7 +15,7 @@
 /* =========================================== */
 @font-face {
   font-family: "Loaded My Mom's Font";
-  src: url("/assets/fonts/my-moms-font.ttf");
+  src: url("../../public/fonts/my-moms-font.ttf");
 }
 body, html {
   /* Better Font Rendering =========== */
