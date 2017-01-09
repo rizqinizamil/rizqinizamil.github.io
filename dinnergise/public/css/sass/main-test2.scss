@@ -50,7 +50,7 @@ body, html {
   background-size: cover;
 }
 .other-background {
-  background-image: url("../../public/images/metal-red.jpg");
+  //background-image: url("../../public/images/metal-red.jpg");
 }
 em {
   //color: $c-yellow;
@@ -103,8 +103,8 @@ li{
   padding-bottom: 10px;
 }
 .bg-inverse {
-  //background-color: #222222 !important;
-  background-color: rgba($c-black, 1) !important;
+  background-color: #222222 !important;
+  //background-color: rgba($c-black, 1) !important;
 }
 .btn {
   border: 2px solid $c-orange;
@@ -246,8 +246,23 @@ a:focus.social {
 }
 .page-title h1 {
 	font-family: $f-serif;
-  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: -.05em;
   text-align: center;
+  font-weight: 700;
+  font-style: italic;
+  position: relative;
+  &:after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: $c-yellow;
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    margin-left: -25px;
+  }
 }
 .index-content {
   //margin: 15px 2% 0 2%;
@@ -348,10 +363,13 @@ a:focus.social {
   margin: 15px 3% 0 3%;
 }
 .order-section-title h2 {
-  border-top: 4px solid salmon; /* was #9A3513 */
+  //border-top: 4px solid salmon; /* was #9A3513 */
   margin-top: 15px;
   margin-bottom: 15px;
   padding-top: 4px;
+  font-family: $f-serif;
+  font-weight: 700;
+  font-style: italic;
 }
 .dish {
   margin: 0 0 15px 0;
@@ -360,27 +378,35 @@ a:focus.social {
   position: absolute;
   width: calc(100% - 30px);
   height: 100%;
-  background-color: rgba(255,255,255,0.08);
+  //background-color: rgba(255,255,255,0.08);
+  background-color: rgba($c-orange, 0.02);
   z-index: -1;
 }
 .dish-special {
-  background-color: #DDDDDD !important;
-  color: #832217 !important;
-  font-size: 0.8rem;
+  //background-color: #DDDDDD !important;
+  background-color: ligthen($c-yellow, 10%) !important;
+  //color: #832217 !important;
+  color: $c-orange !important;
+  //font-size: 0.8rem;
+  font-size: 1rem;
   font-variant: small-caps;
   position: relative;
   top: -1px;
+  padding-bottom: 2px;
+  font-family: $f-sansserif;
 }
 .dish-info {
   padding: 0 0 2px 15px;
 }
 .dish-description {
-  color: #DDDDDD;
+  //color: #DDDDDD;
+  color: $c-black;
   margin-bottom: 6px;
   cursor: pointer;
 }
 .dish-description .fa {
-  color: #DDDDDD;
+  //color: #DDDDDD;
+  color: $c-green;
   cursor: pointer;
   font-size: 1.5em;
   margin-top: -3px;
@@ -401,12 +427,17 @@ a:focus.social {
   width: 6ch;
 }
 .dish-title {
-  color: #F5F5F5;
-  font-weight: 900;
+  //color: #F5F5F5;
+  font-weight: 700;
+  font-style: italic;
+  font-family: $f-serif;
   font-size: 1.2em;
+  color: $c-yellow
 }
 .dish-price {
-  color: #DDDDDD;
+  //color: #DDDDDD;
+  color: $c-orange;
+  font-weight: 600;
   float: right;
   position: relative;
   top: 3px;
@@ -415,8 +446,10 @@ a:focus.social {
   cursor: pointer;
 }
 .dish-nutrition h3 {
-  color: #F5F5F5;
-  font-weight: 900;
+  //color: #F5F5F5;
+  color: $c-yellow;
+  //font-weight: 900;
+  font-weight: 600;
   font-size: 1.2em;
   margin: 0;
   padding-bottom: 3px;
@@ -435,14 +468,16 @@ a:focus.social {
   margin-bottom: 6px;
 }
 .dish-nutrition td {
-  color: #DDDDDD;
+  //color: #DDDDDD;
+  color: $c-black;
   padding-right: 4px;
 }
 .dish-nutrition-ingredient-heading {
   padding-top: 6px;
 }
 .dish-nutrition-ingredient-list {
-  color: #DDDDDD;
+  //color: #DDDDDD;
+  color: $c-black;
   padding: 0 15px 0 0;
 }
 .dish-last-line {
@@ -450,7 +485,8 @@ a:focus.social {
 }
 .dish-allergens {
   float: right;
-  color: #DDDDDD;
+  //color: #DDDDDD;
+  color: $c-black;
   margin-bottom: 0;
 }
 .dish-order {
@@ -465,17 +501,19 @@ a:focus.social {
   margin: 0 10px 0 10px;
 }
 .other-content {
-  margin: 15px 3% 0 3%;
+  //margin: 15px 3% 0 3%;
+  margin: 15px 0;
 }
 .other-content .page-title h1 {
   margin-bottom: 2rem;
   text-align: center;
 }
 .other-topic {
-  background-color: rgba(255,255,255,0.08);
-  border: 1px solid #832217;
-  color: #DDDDDD;
-  padding: 10px 10px 0 10px;
+  //background-color: rgba(255,255,255,0.08);
+  //border: 1px solid #832217;
+  //color: #DDDDDD;
+  //color: $c-black;
+  //padding: 10px 10px 0 10px;
 }
 .other-topic-next {
   margin-top: 3%;
@@ -535,6 +573,7 @@ a:focus.social {
  *		 NAVIGATION STYLE
  * ========================= */
 
+/*
 .navbar-dark{
   .navbar-nav{
     text-align: center;
@@ -554,6 +593,7 @@ a:focus.social {
 		}
 	}
 }
+*/
 
 /* =========================
  *		 CONTENT STYLE
@@ -737,7 +777,7 @@ a:focus.social {
 }
 
 .index-hours-txt{
-  padding: 0 15px 0 50%;
+  padding: 0 0 0 50%;
   width: 100%;
   h3{
     color: white;
@@ -767,23 +807,98 @@ a:focus.social {
 }
 
 /* ================================
-				INDEX version 2
+				ORDER PAGE Style
  ================================= */
 
-.v2{
-	&.index-background{
-		//background: none;
-	}
-	.index-intro{
-		margin-left: 0;
-		width: 50%;
-	}
-	.hf-bg{
-		img{
-			width: 100%;
-			max-width: 100%;
-		}
-	}
+.dish-wrap{
+  padding: 15px;
+  transition: 400ms;
+  &:hover{
+    box-shadow: 0 10px 20px rgba(black, 0.05), inset 0 0 0 1px $c-orange;
+  }
+}
+
+.order-section-title{
+  border-top: 2px dotted rgba($c-yellow, 0.25);
+  margin-top: 2em;
+  h2{
+    margin-bottom: 1.5em;
+    position: relative;
+    &:before{
+      content: "";
+      display: block;
+      height: 2px;
+      width: 40px;
+      background: $c-yellow;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+    }
+  }
+}
+
+.dish-last-line{
+  padding-top: 10px;
+  border-top: 1px dotted rgba(black, 0.25);
+}
+
+
+/* ================================
+        ABOUT PAGE Style
+ ================================= */
+
+.other-topic{
+  background: url('../../public/images/kitchen.jpg') no-repeat center;
+  @include background-size(cover);
+  &-txt{
+    float: right;
+    background: rgba($c-orange, 0.9);
+    color: white;
+    padding: 2em;
+    h2{
+      font-family: $f-serif;
+      font-weight: 700;
+      font-style: italic;
+      color: white;
+      position: absolute;
+      top: 50%;
+      margin-top: -30px;
+      left: -70%;
+      font-size: 2.5em;
+      text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+    }
+  }
+  li{
+    line-height: 1.35;
+    margin-bottom: 10px;
+  }
+  &.other-topic-next{
+    margin-top: 0;
+    background: url('../../public/images/breakfast.jpg') no-repeat center;
+    @include background-size(cover);
+    .other-topic-txt{
+      float: left;
+      background: rgba($c-yellow, 0.9);
+      h2{
+        right: -66%;
+        left: auto;
+      }
+    }
+  }
+}
+
+.team{
+  margin-top: 2em;
+  h2{
+    text-align: center;
+    font-family: $f-serif;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 1em;
+  }
+  h3{
+    font-weight: 600;
+  }
 }
 
 @media (max-width: 767px){
@@ -813,6 +928,18 @@ a:focus.social {
     ul{
       padding-left: 20px;
     } 
+  }
+  .other-topic-txt{
+    width: 100%;
+    h2{
+      position: initial;
+      text-shadow: none;
+      font-size: 2em;
+      margin: 0 0 1em 0;
+    }
+  }
+  .team-col{
+    margin-bottom: 1.5em;
   }
 }
 
@@ -886,5 +1013,14 @@ a:focus.social {
     margin-top: 0;
     padding-left: 0px;
     padding-right: 30px;
+  }
+}
+
+.row{
+  margin-left: 0;
+  margin-right: 0;
+  .row{
+    margin-left: -15px;
+    margin-right: -15px;
   }
 }
