@@ -16,8 +16,9 @@
 /* Color Variable */
 $c-orange: #DB5E24;
 $c-yellow: #DEAC49;
-$c-black: #4C4A50;
+$c-black: #222;
 $c-green: #76A834;
+$c-blue: #19488D;
 
 /* Font Varible */
 @import url('https://fonts.googleapis.com/css?family=Muli:400,600|Playfair+Display:400,700i');
@@ -625,7 +626,7 @@ a:focus.social {
 }
 
 .index-intro{
-  padding: 3em 5em;
+  padding: 5em;
   text-align: center;
   background: url('../images/healthy-crepes.jpg') center fixed no-repeat;
   @include background-size(cover);
@@ -638,7 +639,7 @@ a:focus.social {
   }
   &:hover{
     &:before{
-      background: rgba(white, 0.9);
+      background: rgba(white, 0.75);
     }
   }
   &:before{
@@ -646,11 +647,11 @@ a:focus.social {
     display: block;
     width: 100%;
     height: 100%;
-    background: rgba(white, 0.75);
+    background: rgba(white, 0.65);
     position: absolute;
     top: 0;
     left: 0;
-    transition: 400ms;
+    @include transition(400ms);
   }
   h2{
     margin-bottom: 1em;
@@ -682,11 +683,19 @@ a:focus.social {
 	background: none;
 	position: relative;
 	padding: 0;
-	padding: 1em;
-  border-radius: 5px;
-  transition: 400ms;
+	padding: 2em;
+  //border-radius: 5px;
+  @include transition(400ms);
   &:hover{
-    box-shadow: 0 10px 20px rgba(black, 0.05);
+    box-shadow: 0 5px 20px rgba(black, 0.15);
+    z-index: 9;
+    @include translateY(-10px);
+  }
+  h3{
+    color: #483227;
+  }
+  p{
+    color: #fff;
   }
   /*
 	> *:not(h3){
@@ -752,6 +761,72 @@ a:focus.social {
 		}
 	}
   */
+  &-col{
+    &-first{
+      background: darken($c-yellow, 0);
+      .index-step{
+        background: darken($c-yellow, 0);
+      }
+    }
+    &-middle{
+      background: darken($c-yellow, 5%);
+      .index-step{
+        background: darken($c-yellow, 5%);
+      }
+    }
+    &-last{
+      background: darken($c-yellow, 10%);
+      .index-step{
+        background: darken($c-yellow, 10%);
+        padding-bottom: 80px;
+        &:hover{
+          .index-step-order h3{
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  &-order{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(black, 0.1);
+    height: 80px;
+    .btn{
+      border-radius: 0;
+      background: $c-blue;
+      border: none;
+      color: #483227;
+      height: 80px;
+      width: 35%;
+      position: absolute;
+      bottom: 0;
+      right: 0; 
+      color: #fff;
+      font-weight: bold;
+      font-family: $f-serif;
+      text-transform: capitalize;
+      font-style: italic;
+      font-size: 1.2em;
+      &:hover{
+        background: rgba($c-blue, 0.8);
+      }
+    }
+    h3{
+      width: 60%;
+      text-align: left;
+      font-size: 1.5em;
+      position: absolute;
+      top: 50%;
+      @include translateY(-50%);
+      margin-bottom: 0;
+      padding-left: 30px;
+      color: #483227;
+      @include transition(400ms);
+    }
+  }
 }
 
 .index-hours{
@@ -797,8 +872,37 @@ a:focus.social {
   background: rgba($c-orange, 0.9);
 }
 .index-equal-col-heights{
+  border-bottom: 10px solid $c-black;
   h2{
     margin-bottom: 1em;
+  }
+}
+
+.index-content .index-equal-col-heights{
+  padding-bottom: 0;
+}
+
+.hidden-sm-down{
+  display: none;
+}
+
+.flex{
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex; 
+
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  [class*="index-step-col-"]{
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex; 
   }
 }
 
@@ -810,9 +914,15 @@ a:focus.social {
 				ORDER PAGE Style
  ================================= */
 
+ .order{
+  background-image: url(../images/left-pattern.png), url(../images/right-pattern.png);
+  background-repeat: no-repeat;
+  background-position: top left, top right;
+ }
+
 .dish-wrap{
   padding: 15px;
-  transition: 400ms;
+  @include transition(400ms);
   &:hover{
     box-shadow: 0 10px 20px rgba(black, 0.05), inset 0 0 0 1px $c-orange;
   }
@@ -899,6 +1009,27 @@ a:focus.social {
   h3{
     font-weight: 600;
   }
+  &-social{
+    margin-top: 1em;
+    a{
+      &:hover{
+        color: $c-blue;
+      }
+    }
+  }
+  &-col{
+    img{
+      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(100%);
+      @include transition(400ms);
+    }
+    &:hover{
+      img{
+        -webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
+        filter: grayscale(0);
+      }
+    }
+  }
 }
 
 @media (max-width: 767px){
@@ -941,6 +1072,36 @@ a:focus.social {
   .team-col{
     margin-bottom: 1.5em;
   }
+  .index-step{
+    width: 100%;
+    &-order{
+      h3{
+        position: absolute;
+        top: 50%;
+        @include translateY(-50%);
+      }
+    }
+  }
+  .flex [class*="index-step-col-"]{
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+
+  .order{
+    background-image: url(../images/right-pattern.png);
+    background-position: top center;
+    background-repeat: repeat-x;
+    .order-content{
+      margin: 0 3% 0 3%;
+      .page-title{
+        h1{
+          margin-top: 0;
+          padding-top: .75em;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 768px) and (max-width: 990px){
@@ -950,6 +1111,28 @@ a:focus.social {
     }
     ul{
       padding-left: 20px;
+    }
+  }
+  .flex [class*="index-step-col-"]{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .index-step{
+    &-order{
+      h3{
+        font-size: 1.2em;
+      }
+    }
+  }
+  .order{
+    .order-content{
+      margin: 0 3% 0 3%;
+      .page-title{
+        h1{
+          margin-top: 0;
+          padding-top: .75em;
+        }
+      }
     }
   }
 }
@@ -989,8 +1172,27 @@ a:focus.social {
     padding-bottom: 0;
     margin-bottom: 15px;
   }
+  .index-intro{
+    h2{
+      font-size: 2.2em;
+    }
+    &-highlight{
+      font-size: 1.4em;
+      + ul li{
+        font-size: 1.4em;
+      }
+    }
+  }
+  .index-hours-orange{
+    h3{
+      font-size: 1.5em;
+    }
+  }
   .index-equal-col-heights {
     //overflow: hidden;
+    h2{
+      font-size: 2.2em;
+    }
   }
   .index-step {
     //margin-bottom: -99999px;
@@ -1000,7 +1202,8 @@ a:focus.social {
     margin-bottom: 0;
   }
   .index-step-col-first {
-    padding-left: 30px;
+    //padding-left: 30px;
+    padding-left: 0;
     padding-right: 0px;
   }
   .index-step-col-middle {
@@ -1012,7 +1215,18 @@ a:focus.social {
   .index-step-col-last {
     margin-top: 0;
     padding-left: 0px;
-    padding-right: 30px;
+    //padding-right: 30px;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1100px){
+  .index-step{
+    &-order{
+      h3{
+        font-size: 1.2em;
+      }
+    }
   }
 }
 
@@ -1023,4 +1237,8 @@ a:focus.social {
     margin-left: -15px;
     margin-right: -15px;
   }
+}
+
+.no-border{
+  border: none !important;
 }
