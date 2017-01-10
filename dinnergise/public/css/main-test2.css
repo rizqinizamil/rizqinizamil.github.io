@@ -1039,6 +1039,7 @@ a:focus.social {
   -o-background-size: cover;
   -webkit-background-size: cover;
   background-size: cover;
+  padding: 2em;
 }
 .other-topic-txt {
   float: right;
@@ -1140,10 +1141,14 @@ a:focus.social {
   }
 
   .index-hours-txt {
-    padding: 1.5em 2em;
+    padding: 1.5em;
   }
   .index-hours-txt ul {
     padding-left: 20px;
+  }
+
+  .other-topic {
+    padding: 1.5em;
   }
 
   .other-topic-txt {

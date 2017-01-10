@@ -960,6 +960,7 @@ a:focus.social {
 .other-topic{
   background: url('../../public/images/kitchen.jpg') no-repeat center;
   @include background-size(cover);
+  padding: 2em;
   &-txt{
     float: right;
     background: rgba($c-orange, 0.9);
@@ -1055,10 +1056,13 @@ a:focus.social {
     }
   }
   .index-hours-txt{
-    padding: 1.5em 2em;
+    padding: 1.5em;
     ul{
       padding-left: 20px;
     } 
+  }
+  .other-topic{
+    padding: 1.5em;
   }
   .other-topic-txt{
     width: 100%;
