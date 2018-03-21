@@ -56,7 +56,7 @@ jQuery(document).ready(function () {
 	//$( "#portfolio" ).append( "<div class='portfoliobg'></div>");
 
 	// random bg image
-    var bgImages = "http://rizqi.im/images/bg-1.jpg http://rizqi.im/images/bg-2.jpg http://rizqi.im/images/bg-3.jpg http://rizqi.im/images/bg-4.jpg".split(' ');
+    var bgImages = "http://rizqi.im/v.1.0/images/bg-1.jpg http://rizqi.im/v.1.0/images/bg-4.jpg".split(' ');
     var image = bgImages[Math.floor(Math.random() * bgImages.length)];
     $('.image, .portfoliobg, footer, .blurbg').css('background-image', 'url("' + image + '")');
 
